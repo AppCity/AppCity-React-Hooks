@@ -1,18 +1,18 @@
 import { useRef, useState } from "react";
-
-import * as hooks from "./lib";
+//Hooks
+import * as hooks from "./lib/src/hooks";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
 
-  const [isOpen, setIsOpen] = useState(false);
-  hooks.useClickOutside(containerRef, isOpen, () => {
-    setIsOpen(!isOpen);
-  });
+  hooks.useClickOutside(containerRef, isOpen, () => setIsOpen(!isOpen));
 
-  const cd = hooks.useComponentSize(containerRef);
+  const componentSize = hooks.useComponentSize(containerRef);
+  console.log("🚀 --- componentSize", componentSize);
 
   const { width } = hooks.useWindowSize();
+  console.log("🚀 --- width", width);
 
   return (
     <div className="App" style={{ background: "lightgreen", height: 500 }}>
@@ -28,7 +28,7 @@ function App() {
         onClick={() => console.log("div 2 clicked")}
         style={{ background: "blue", height: 200 }}
       >
-        test 2
+        Div Component 2
       </div>
     </div>
   );
