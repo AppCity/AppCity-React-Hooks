@@ -19,8 +19,8 @@ MODE.map((format) => {
       file: `dist/index.${format}.js`,
       format,
       exports: "auto",
-      sourcemap: true,
-      strict: false,
+      // sourcemap: true,
+      // strict: false,
     },
     // this externelizes react to prevent rollup from compiling it
     external: ["react", "react-dom", /@babel\/runtime/],

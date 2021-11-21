@@ -1,6 +1,6 @@
 {
   "name": "appcity-react-hooks",
-  "version": "1.0.6",
+  "version": "1.0.14",
   "description": "Custom React Hooks",
   "private": false,
   "author": "App City",
@@ -27,8 +27,7 @@
     "build": "rollup -c",
     "patch": "npm version patch",
     "minor": "npm version minor",
-    "major": "npm version major",
-    "publish": "npm publish"
+    "major": "npm version major"
   },
   "peerDependencies": {
     "react": "^17.0.2",

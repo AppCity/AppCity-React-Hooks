@@ -2,7 +2,8 @@
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('react'), require('@babel/runtime/helpers/slicedToArray')) :
   typeof define === 'function' && define.amd ? define(['exports', 'react', '@babel/runtime/helpers/slicedToArray'], factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global["appcity-react-hooks"] = {}, global.react, global._slicedToArray));
-})(this, (function (exports, react, _slicedToArray) {
+})(this, (function (exports, react, _slicedToArray) { 'use strict';
+
   function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
   var _slicedToArray__default = /*#__PURE__*/_interopDefaultLegacy(_slicedToArray);
@@ -77,4 +78,3 @@
   Object.defineProperty(exports, '__esModule', { value: true });
 
 }));
-//# sourceMappingURL=index.umd.js.map

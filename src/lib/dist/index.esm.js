@@ -65,4 +65,3 @@ var useWindowSize = function useWindowSize() {
 };
 
 export { useClickOutside, useComponentSize, useWindowSize };
-//# sourceMappingURL=index.esm.js.map
