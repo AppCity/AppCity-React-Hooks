@@ -11,13 +11,12 @@ const MODE = ["cjs", "esm", "umd"];
 
 let config = [];
 
-MODE.map((fomart) => {
+MODE.map((format) => {
   let conf = {
     input,
     output: {
-      // then name of your package
       name: "appcity-react-hooks",
-      file: `dist/index.${fomart}.js`,
+      file: `dist/index.${format}.js`,
       format,
       exports: "auto",
       sourcemap: true,
@@ -33,7 +32,7 @@ MODE.map((fomart) => {
         babelHelpers: "runtime",
       }),
       // this adds sourcemaps
-      sourcemaps(),
+      // sourcemaps(),
       // this adds support for styles
       styles({
         postcss: {

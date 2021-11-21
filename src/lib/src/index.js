@@ -1,3 +1,7 @@
-import { useClickOutside, useComponentSize, useWindowSize } from "./hooks";
+import {
+  useClickOutside,
+  useComponentSize,
+  useWindowSize,
+} from "./hooks/index";
 
 export { useClickOutside, useComponentSize, useWindowSize };
