@@ -24,7 +24,7 @@ Custom React hooks.
 
 ## Links
 
-- [Examples](https://github.com/AppCity/AppCity-React-Hooks/example)
+- [Examples](https://github.com/AppCity/AppCity-React-Hooks/blob/master/example/Example.js)
 
 ## Quickstart
 
@@ -123,3 +123,9 @@ function App() {
 #### useWindowSize
 
 Does not require any parameters to be passed.
+
+### Creators
+
+_App City_
+
+#### License: MIT
