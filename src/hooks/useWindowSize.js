@@ -1,9 +1,10 @@
-/*
- * Returns window dimensions - width & height.
- * Responsive with event listeners.
- */
-
 import { useState, useLayoutEffect, useCallback } from "react";
+/**
+ * Gets the width and Height of the Screen/Window.
+ * Responsive event listeners, works on resize.
+ *
+ * @return {object} {width, height} - Returns width & height
+ */
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
