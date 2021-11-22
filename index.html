@@ -1,0 +1,141 @@
+<h1 id="appcityreacthooks">AppCity-React-Hooks</h1>
+
+<blockquote>
+    <p>Author: App City</p>
+</blockquote>
+
+<p><em>Version 1</em></p>
+
+<p>Custom React Hooks created to make ease of use for other common use cases like getting window dimensions or component
+    dimensions, Click outside events, etc.</p>
+
+<h2 id="features">Features</h2>
+
+<p>Custom React hooks.</p>
+
+<ul>
+    <li>useClickOutside</li>
+
+    <li>useComponentSize</li>
+
+    <li>useWindowSize</li>
+</ul>
+
+<h2 id="installationnpm">Installation NPM:</h2>
+
+<pre><code>npm i appcity-react-hooks
+</code></pre>
+
+<h2 id="installationyarn">Installation Yarn:</h2>
+
+<pre><code>yarn add appcity-react-hooks
+</code></pre>
+
+<h2 id="links">Links</h2>
+
+<ul>
+    <li><a href="https://github.com/AppCity/AppCity-React-Hooks/blob/master/example/Example.js">Examples</a></li>
+</ul>
+
+<h2 id="quickstart">Quickstart</h2>
+
+<h3 id="useclickoutside">useClickOutside</h3>
+
+<p>Listen to click events and register clicks outside a React component. Useful to close a dropdown when clicked outside
+    its dropdown menu.</p>
+
+<pre><code class="jsx language-jsx">import React, { useRef, useState } from "react";
+import { useClickOutside } from "appcity-react-hooks";
+
+function App() {
+  const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef(null);
+
+  hooks.useClickOutside(containerRef, isOpen, () =&gt; setIsOpen(!isOpen));
+
+  return (
+    &lt;div className="App" style={{ background: "lightgreen", height: 500 }}&gt;
+      &lt;div
+        ref={containerRef}
+        style={{ background: "lightgrey", height: 200 }}
+        onClick={() =&gt; setIsOpen(true)}
+      &gt;
+        useClickOutside
+      &lt;/div&gt;
+
+      &lt;div
+        onClick={() =&gt; console.log("div 2 clicked")}
+        style={{ background: "blue", height: 200 }}
+      &gt;
+        Div Component 2
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+
+<h3 id="usecomponentsize">useComponentSize</h3>
+
+<p>Get the width and height of any react component.</p>
+
+<pre><code class="jsx language-jsx">import React, { useRef } from "react";
+import { useComponentSize } from "appcity-react-hooks";
+
+function App() {
+  const containerRef = useRef(null);
+  const componentSize = useComponentSize(containerRef);
+
+  return (
+    &lt;div className="App" style={{ background: "lightgreen", height: 500 }}&gt;
+      &lt;div ref={containerRef} style={{ background: "lightgrey", height: 200 }}&gt;
+        useComponentSize
+      &lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+
+<h3 id="usewindowsize">useWindowSize</h3>
+
+<p>Get the width and height of a Window. Update the width and height based on the window resize. It is responsive and
+    listens to window resizing events.</p>
+
+<pre><code class="jsx language-jsx">import React from "react";
+import { useWindowSize } from "appcity-react-hooks";
+
+function App() {
+  const { width, height } = useWindowSize();
+
+  return (
+    &lt;div className="App" style={{ background: "lightgreen", height: 500 }}&gt;
+      &lt;div style={{ background: "lightgrey", height: 200 }}&gt;useWindowSize&lt;/div&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+
+<h2 id="parameters">Parameters</h2>
+
+<h4 id="useclickoutside-1">useClickOutside</h4>
+
+<p>| Name | Description | Type | Required | Example |
+    | ------ | -------------------------------------------- | -------- | -------- | -------- |
+    | ref | Pass the ref of the dropdown cotainer | Ref | yes | useRef() |
+    | state | Pass the state of the component | Boolean | yes | false |
+    | action | Pass the toggle function to update the state | function | yes | toggle() |</p>
+
+<h4 id="usecomponentsize-1">useComponentSize</h4>
+
+<p>| Name | Description | Type | Required | Example |
+    | ---- | ------------------------------------- | ---- | -------- | -------- |
+    | ref | Pass the ref of the dropdown cotainer | Ref | yes | useRef() |</p>
+
+<h4 id="usewindowsize-1">useWindowSize</h4>
+
+<p>Does not require any parameters to be passed.</p>
+
+<h3 id="creators">Creators</h3>
+
+<p><em>App City</em></p>
+
+<h4 id="licensemit">License: MIT</h4>
