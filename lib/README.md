@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+# AppCity-React-Hooks
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Author: App City
+> Version 1.0.15
 
-## Available Scripts
+Custom React Hooks created to make ease of use for other common use cases like getting window dimensions or component dimensions, Click outside events, etc.
 
-In the project directory, you can run:
+## Features
 
-### `yarn start`
+Custom React hooks.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- useClickOutside
+- useComponentSize
+- useWindowSize
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation NPM:
 
-### `yarn test`
+    npm i appcity-react-hooks
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation Yarn:
 
-### `yarn build`
+    yarn add appcity-react-hooks
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Links
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [Examples](https://github.com/AppCity/AppCity-React-Hooks/lib/example)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Quickstart
 
-### `yarn eject`
+### useClickOutside
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Listen to click events and register clicks outside a React component. Useful to close a dropdown when clicked outside its dropdown menu.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```jsx
+import React, { useRef, useState } from "react";
+import { useClickOutside } from "appcity-react-hooks";
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+function App() {
+  const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef(null);
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  hooks.useClickOutside(containerRef, isOpen, () => setIsOpen(!isOpen));
 
-## Learn More
+  return (
+    <div className="App" style={{ background: "lightgreen", height: 500 }}>
+      <div
+        ref={containerRef}
+        style={{ background: "lightgrey", height: 200 }}
+        onClick={() => setIsOpen(true)}
+      >
+        useClickOutside
+      </div>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+      <div
+        onClick={() => console.log("div 2 clicked")}
+        style={{ background: "blue", height: 200 }}
+      >
+        Div Component 2
+      </div>
+    </div>
+  );
+}
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### useComponentSize
 
-### Code Splitting
+Get the width and height of any react component.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```jsx
+import React, { useRef } from "react";
+import { useComponentSize } from "appcity-react-hooks";
 
-### Analyzing the Bundle Size
+function App() {
+  const containerRef = useRef(null);
+  const componentSize = useComponentSize(containerRef);
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  return (
+    <div className="App" style={{ background: "lightgreen", height: 500 }}>
+      <div ref={containerRef} style={{ background: "lightgrey", height: 200 }}>
+        useComponentSize
+      </div>
+    </div>
+  );
+}
+```
 
-### Making a Progressive Web App
+### useWindowSize
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Get the width and height of a Window. Update the width and height based on the window resize. It is responsive and listens to window resizing events.
 
-### Advanced Configuration
+```jsx
+import React from "react";
+import { useWindowSize } from "appcity-react-hooks";
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+function App() {
+  const { width, height } = useWindowSize();
 
-### Deployment
+  return (
+    <div className="App" style={{ background: "lightgreen", height: 500 }}>
+      <div style={{ background: "lightgrey", height: 200 }}>useWindowSize</div>
+    </div>
+  );
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Parameters
 
-### `yarn build` fails to minify
+#### useClickOutside
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Name   | Description                                  | Type     | Required | Example  |
+| ------ | -------------------------------------------- | -------- | -------- | -------- |
+| ref    | Pass the ref of the dropdown cotainer        | Ref      | yes      | useRef() |
+| state  | Pass the state of the component              | Boolean  | yes      | false    |
+| action | Pass the toggle function to update the state | function | yes      | toggle() |
+
+#### useComponentSize
+
+| Name | Description                           | Type | Required | Example  |
+| ---- | ------------------------------------- | ---- | -------- | -------- |
+| ref  | Pass the ref of the dropdown cotainer | Ref  | yes      | useRef() |
+
+#### useWindowSize
+
+Does not require any parameters to be passed.
