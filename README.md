@@ -1,7 +1,8 @@
 # AppCity-React-Hooks
 
 > Author: App City
-> Version 1.0.15
+
+_Version 1_
 
 Custom React Hooks created to make ease of use for other common use cases like getting window dimensions or component dimensions, Click outside events, etc.
 
@@ -23,7 +24,7 @@ Custom React hooks.
 
 ## Links
 
-- [Examples](https://github.com/AppCity/AppCity-React-Hooks/lib/example)
+- [Examples](https://github.com/AppCity/AppCity-React-Hooks/example)
 
 ## Quickstart
 

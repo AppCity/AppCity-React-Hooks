@@ -5,6 +5,11 @@
   "private": false,
   "author": "App City",
   "license": "MIT",
+  "homepage": "https://github.com/AppCity/AppCity-React-Hooks",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AppCity/AppCity-React-Hooks"
+  },
   "keywords": [
     "React",
     "Hooks",
@@ -14,10 +19,6 @@
     "App-City",
     "App-City.co"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/.git"
-  },
   "files": [
     "dist",
     "README.md"
