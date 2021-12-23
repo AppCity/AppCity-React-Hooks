@@ -1,6 +1,6 @@
-# AppCity-React-Hooks
+# AppyMango-React-Hooks
 
-> Author: App City
+> Author: Appy Mango
 
 _Version 1_
 
@@ -16,15 +16,15 @@ Custom React hooks.
 
 ## Installation NPM:
 
-    npm i appcity-react-hooks
+    npm i appymango-react-hooks
 
 ## Installation Yarn:
 
-    yarn add appcity-react-hooks
+    yarn add appymango-react-hooks
 
 ## Links
 
-- [Examples](https://github.com/AppCity/AppCity-React-Hooks/blob/master/example/Example.js)
+- [Examples](https://github.com/appymango/AppyMango-React-Hooks/blob/master/example/Example.js)
 
 ## Quickstart
 
@@ -34,7 +34,7 @@ Listen to click events and register clicks outside a React component. Useful to 
 
 ```jsx
 import React, { useRef, useState } from "react";
-import { useClickOutside } from "appcity-react-hooks";
+import { useClickOutside } from "appymango-react-hooks";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,7 +69,7 @@ Get the width and height of any react component.
 
 ```jsx
 import React, { useRef } from "react";
-import { useComponentSize } from "appcity-react-hooks";
+import { useComponentSize } from "appymango-react-hooks";
 
 function App() {
   const containerRef = useRef(null);
@@ -91,7 +91,7 @@ Get the width and height of a Window. Update the width and height based on the w
 
 ```jsx
 import React from "react";
-import { useWindowSize } from "appcity-react-hooks";
+import { useWindowSize } from "appymango-react-hooks";
 
 function App() {
   const { width, height } = useWindowSize();
@@ -126,6 +126,6 @@ Does not require any parameters to be passed.
 
 ### Creators
 
-_App City_
+_Appy Mango_
 
 #### License: MIT
